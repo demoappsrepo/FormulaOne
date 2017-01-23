@@ -1,0 +1,381 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif,  Arial, "Helvetica Condensed", Helvetica, sans-serif;
+  padding-top:30px; margin-top: 30px; margin-bottom: 60px;
+}
+
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+/* End: Recommended Isotope styles */
+
+
+
+/* disable CSS transitions for containers with infinite scrolling*/
+.isotope.infinite-scrolling {
+  -webkit-transition: none;
+     -moz-transition: none;
+      -ms-transition: none;
+       -o-transition: none;
+          transition: none;
+}
+
+.container {
+  margin-bottom: 40px;
+}
+
+.container-narrow {
+  margin-bottom: 0px;
+}
+
+.item {
+  line-height: 1;
+  border: 1px  #8585AD solid;
+  float: left;
+  padding: 2px;
+  margin: 2px;
+  border-radius: 12px;
+  text-overflow: ellipsis;
+  /*white-space: nowrap;*/
+  text-align: center;
+  min-width: 165px;
+  background-color: white;
+  /*background-image: url(/images/helmet-icon.png);
+  opacity : 0.2;*/
+}
+
+#isotopeContainer {
+  padding-left: 5px;
+}
+.item > hr {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.round {
+  font-size: 2.2em;
+  text-align: center;
+}
+
+.standingPosition {
+  font-size: 2em;
+  text-align: center;
+}
+
+.position {
+  font-size: 7em;
+  font-weight: bold;
+  color: #8585AD;
+  width: 100%;
+  /*display: inline-block;*/
+  margin: 0px;
+  height: 100px;
+}
+
+.consName{
+  font-size: 2em;
+  margin: 0px;
+  text-align: right;
+}
+
+.lastName {
+  font-size: 2em;
+  margin: 0px;
+  text-align: right;
+}
+
+.firstName {
+  font-size: 1em;
+  font-style: italic;
+  text-align: left;
+}
+
+.driverNo {
+  font-size: 4em;
+  font-weight: bold;
+  width: 100%;
+
+  margin: 0px;
+  height: 100px;
+}
+
+.centerMe {
+  text-align: center;
+}
+
+.item .status {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.item .raceTime {
+  font-size: 1em;
+}
+
+.mainPic {
+  text-align: center;
+}
+
+.mainPic img {
+  border: 1px #8585AD solid;
+}
+
+.divider {
+  font-size:0.8em;
+  color: #8585AD;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 300px;
+    overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+
+}
+
+.pole {
+  background-image: url("../images/flag_opac.jpg");
+  color: #fff;
+  text-shadow: 0 0 2px #000, 0 0 2px #000;
+}
+
+.pole .position {
+  color: #fff;
+  text-shadow: 0 0 2px #000, 0 0 2px #000;
+}
+
+.pole .lastName a {
+  color: #fff;
+  text-shadow: 0 0 2px #000, 0 0 2px #000;
+}
+
+.raceForecast {
+  border: 1px blue solid;
+  padding: 2px !important;
+}
+
+.raceForecast > div {
+  float: left;
+  margin-right: 2px;
+}
+
+.weatherTile {
+  text-align: center;
+  display: inline-block;
+  max-width: 60px;
+  height: 60px;
+  padding: 0px 1px;
+  line-height: 1;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.weatherTile img {
+  width: 45px;
+}
+
+img.arrow {
+  width: 33px;
+}
+
+.tempTile {
+  margin: 1px;
+  display: block;
+  padding-top: 3px;
+}
+
+.tempMin {
+  padding-top: 5px;
+  font-size: 0.6em;
+  text-align: left;
+}
+
+.tempMax {
+  font-size: 0.6em;
+  text-align: right;
+}
+
+.tempMain {
+  font-size: 1.7em;
+}
+
+.weatherDesc {
+  width: 100%;
+  float:left;
+  font-size: 0.6em;
+  display: block;
+}
+
+.footer {
+  background-color: #333;
+  height: 40px;
+}
+
+.footerNarrow {
+  background-color: #eee;
+  height: 5px;
+}
+
+.footer a {
+  color: white;
+}
+
+.article {
+
+}
+
+div.clear {
+  clear: both;
+}
+
+.news {
+  float:left;
+  width: 40%;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.related {
+  width: 100%;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  clear: both;
+}
+
+.twitter {
+  display: inline-block;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-size: 12px;
+overflow-wrap: break-word;
+  word-wrap: break-word;
+  line-height: 16px;
+  border-color: #eee #ddd #bbb;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin: 10px 5px;
+  padding: 5px;
+  max-width: 300px;
+  float: left;
+}
+.twitter > img.icon {
+  float:left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.twitter > img.icon_small {
+  width: 15px;
+}
+
+.date {
+  font-size: 0.8em;
+  width: 100%;
+  text-align: right;
+}
+
+.twitter > span > p {
+  margin-bottom: 2px;
+}
+
+.twitter > span > p > img {
+  width: 25px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+ .twitter > a > h4 {
+  font-size: 0.9em;
+  margin-top: 0px;  
+  margin-bottom: 2px;
+  clear: both;
+ }
+
+.half {
+  width: 50%;
+}
+
+.disqualified {
+  background-color: #ff9999;
+}
+
+.fullscreenCenter {
+  font-size: 2em;
+  margin: auto;
+  padding-top: 20%;
+  text-align: center;
+  vertical-align: bottom;
+  width: 100%;
+  height:50vh;
+}
+
+.nobreak {
+  white-space: nowrap;
+  white-space: pre;
+}
+
+caption {
+  font-size: 24px;
+}

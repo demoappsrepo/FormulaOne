@@ -1,0 +1,47 @@
+<div ng-show="no_data" class="fullscreenCenter">
+  There is no data to display
+</div>
+<div ng-hide="content_loaded" class="fullscreenCenter">
+  Just grabbing your data...
+</div>
+<div ng-hide="no_data" ng-show="content_loaded">
+  <h3>{{team.StandingsLists[0].ConstructorStandings[0].Constructor.name}}</h3>
+  <img class="img-responsive center-block img-thumbnail" ng-src="{{team.imageUrl}}" />
+  <h4>Social Networking</h4>
+  <div ng-repeat="article in tweets">
+    <div class="article {{article.type}}" ng-if="article.type == 'twitter'">
+      <img class="icon" ng-src="{{article.pic}}" /><span ng-bind-html="article.content"></span>
+      <a target="_blank" ng-href="{{article.unescapedUrl}}"><h4 ng-bind-html="article.titleNoFormatting"></h4></a>
+      <img class="icon icon_small" src="./images/icons/icon-twitter.png" />
+      <span class="date"><i>{{article.publishedDate}}</i></span>
+    </div>
+  </div>
+  <div class="clear"/>
+  <h4>Race Points &amp; Wins History</h4>
+  <div ng-hide="chartLoaded">
+    <img width="300px" src="./images/loading.gif">
+  </div>
+  <canvas id="bar" class="chart chart-bar" data="chartData"
+    labels="chartLabels" chart-legend="true" series="chartSeries" options="chartOptions"
+    click="onClick">
+  </canvas> 
+  <div ng-show="content_loaded">
+    <table class="table constructortable table-striped table-bordered table-condensed">
+      <tr>
+        <th>Season</th>
+        <th>Rounds</th>
+        <th>Position</th>
+        <th>Points</th>
+        <th>Wins</th>
+      </tr>
+      <tr ng-repeat="result in team.StandingsLists" ng-class-odd="'odd'" ng-class-even="'even'">
+        <td>{{result.season}}</td>
+        <td>{{result.round}}</td>
+        <td>{{result.ConstructorStandings[0].position}}</td>
+        <td>{{result.ConstructorStandings[0].points}}</td>
+        <td>{{result.ConstructorStandings[0].wins}}</td>
+      </tr>
+      <tr><td colspan="5" class="footerNarrow"></td></tr>
+    </table>
+  </div>
+</div>
